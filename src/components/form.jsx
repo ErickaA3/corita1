@@ -27,11 +27,12 @@ function Formulario() {
     formData.append('description', description);
 
     try {
-      const response = await axios.post('http://localhost:5000/upload', formData, {
+      const response = await axios.post('https://corita1-production.up.railway.app/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
       });
+      
 
       setMessage(response.data);
     } catch (error) {
