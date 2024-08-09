@@ -10,7 +10,7 @@ const app = express();
 
 // Configurar CORS para permitir solicitudes desde cualquier origen
 app.use(cors({
-  origin: 'http://localhost:5173',  // Permite solicitudes desde tu frontend
+  origin: 'https://erickaa3.github.io/',  // Permite solicitudes desde tu frontend
   methods: ['GET', 'POST'],         // Métodos permitidos
   allowedHeaders: ['Content-Type']  // Encabezados permitidos
 }));
