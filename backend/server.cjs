@@ -9,8 +9,7 @@ dotenv.config();
 const app = express();
 
 // Configurar CORS para permitir solicitudes desde cualquier origen
-const allowedOrigins = ['http://localhost:5173', 'https://erickaa3.github.io/corita1'];
-
+const allowedOrigins = ['http://localhost:5173', 'https://erickaa3.github.io'];
 
 app.use(cors({
   origin: function (origin, callback) {
@@ -21,8 +20,9 @@ app.use(cors({
     }
   },
   methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type', 'Authorization'] 
+  allowedHeaders: ['Content-Type'],
 }));
+
 
 
 
