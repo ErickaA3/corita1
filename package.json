@@ -24,7 +24,10 @@
   
     
   "predeploy": "npm run build",
+  
+    
   "start": "node ./backend/server.cjs",
+  
     
   "deploy": "gh-pages -d dist"
   
@@ -75,7 +78,10 @@
   "react": "^18.3.1",
   
     
-  "react-dom": "^18.3.1"
+  "react-dom": "^18.3.1",
+  
+    
+  "react-router-dom": "^6.26.0"
   
   },
   
