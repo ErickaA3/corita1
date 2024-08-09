@@ -17,7 +17,7 @@ function App() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link as={Link} to="/">Inicio</Nav.Link>
+              <Nav.Link as={Link} to="/Afrom">Inicio</Nav.Link>
               <Nav.Link as={Link} to="/fotos">Fotos</Nav.Link>
               <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                 <NavDropdown.Item as={Link} to="#action/3.1">Action</NavDropdown.Item>
@@ -32,7 +32,7 @@ function App() {
       </Navbar>
       <Container>
         <Routes>
-          <Route path="/" element={<AForm />} />
+          <Route path="/Aform" element={<AForm />} />
           <Route path="/fotos" element={<Fotos />} />
         </Routes>
       </Container>
