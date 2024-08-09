@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css'
-function AForm() {
+function Formulario() {
   const [file, setFile] = useState(null);
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
@@ -109,4 +109,4 @@ function AForm() {
   );
 }
 
-export default AForm;
+export default Formulario;
