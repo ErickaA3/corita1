@@ -24,7 +24,7 @@
   
     
   "predeploy": "npm run build",
-  
+  "start": "node ./backend/server.cjs",
     
   "deploy": "gh-pages -d dist"
   
