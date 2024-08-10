@@ -9,7 +9,8 @@ dotenv.config();
 const app = express();
 
 // Configurar CORS para permitir solicitudes desde cualquier origen
-const allowedOrigins = ['http://localhost:5173', 'https://erickaa3.github.io'];
+const allowedOrigins = ['http://localhost:5173', 'https://erickaa3.github.io/corita1'];
+
 
 app.use(cors({
   origin: function (origin, callback) {
@@ -20,9 +21,8 @@ app.use(cors({
     }
   },
   methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type'],
+  allowedHeaders: ['Content-Type', 'Authorization'] 
 }));
-
 
 
 
@@ -30,7 +30,9 @@ app.use(cors({
 app.use(express.json()); // Para manejar datos JSON
 
 // Conectar a MongoDB
-mongoose.connect(process.env.MONGO_URI,{ useNewUrlParser: true, useUnifiedTopology: true })
+const mongoURI = `mongodb://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_HOST}:${process.env.MONGO_PORT}`;
+
+mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Conectado a MongoDB'))
   .catch(err => console.error('Error al conectar a MongoDB:', err));
 
