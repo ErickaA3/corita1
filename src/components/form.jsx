@@ -49,7 +49,7 @@ function Formulario() {
           <Form.Label>Correo Electrónico</Form.Label>
           <Form.Control 
             type="email" 
-            placeholder="Ingresa tu correo electrónico." 
+            placeholder="Ingresa tu correo electrónicooo." 
             value={email} 
             onChange={(e) => setEmail(e.target.value)} 
             required 
