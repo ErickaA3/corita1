@@ -13,16 +13,11 @@ const allowedOrigins = ['http://localhost:5173', 'https://erickaa3.github.io/cor
 
 
 app.use(cors({
-  origin: function (origin, callback) {
-    if (allowedOrigins.includes(origin) || !origin) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
+  origin: '*',  // Permitir todas las solicitudes de cualquier origen
   methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type', 'Authorization'] 
+  allowedHeaders: ['Content-Type', 'Authorization'],
 }));
+
 
 
 
