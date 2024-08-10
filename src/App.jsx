@@ -1,5 +1,4 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Formulario from './components/form'; 
 import Fotos from './components/Fotos'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -9,36 +8,55 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function App() {
+  const [view, setView] = React.useState(window.location.hash.replace('#', '') || 'formulario');
+
+  React.useEffect(() => {
+    const handleHashChange = () => {
+      setView(window.location.hash.replace('#', '') || 'formulario');
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, []);
+
+  const renderContent = () => {
+    if (view === 'formulario') {
+      return <Formulario />;
+    }
+    if (view === 'fotos') {
+      return <Fotos />;
+    }
+    return <Formulario />; // Página por defecto
+  };
+
   return (
-    <Router basename="/corita1">
+    <div>
       <Navbar expand="lg" className="bg-body-tertiary">
         <Container>
-          <Navbar.Brand as={Link} to="/">Corita</Navbar.Brand>
+          <Navbar.Brand href="#formulario">Corita</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link as={Link} to="/Formulario">Formulario</Nav.Link>
-              <Nav.Link as={Link} to="/fotos">Fotos</Nav.Link>
+              <Nav.Link href="#formulario">Formulario</Nav.Link>
+              <Nav.Link href="#fotos">Fotos</Nav.Link>
               <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item as={Link} to="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="#action/3.2">Another action</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="#action/3.3">Something</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item as={Link} to="#action/3.4">Separated link</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
       <Container>
-        <Routes>
-          <Route path="/Formulario" element={<Formulario />} />
-          <Route path="/fotos" element={<Fotos />} />
-        </Routes>
+        {renderContent()}
       </Container>
-    </Router>
+    </div>
   );
 }
-//sssss
-export default App;
 
+export default App;
