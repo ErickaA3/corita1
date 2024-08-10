@@ -9,8 +9,12 @@ dotenv.config();
 const app = express();
 
 // Configurar CORS para permitir solicitudes desde cualquier origen
-const allowedOrigins = ['http://localhost:5173', 'https://erickaa3.github.io/corita1'];
-
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*'); // Permitir todos los orígenes
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE'); // Permitir estos métodos
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // Permitir estos encabezados
+  next();
+});
 
 app.use(cors({
   origin: '*',  // Permitir todas las solicitudes de cualquier origen
