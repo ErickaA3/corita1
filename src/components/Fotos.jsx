@@ -8,7 +8,7 @@ function Fotos() {
     // Obtener las imágenes del backend cuando el componente se monte
     const fetchImages = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/images');
+        const response = await axios.get('https://corita1-production.up.railway.app/images');
         setImages(response.data);
       } catch (error) {
         console.error('Error al obtener las imágenes', error);
