@@ -19,7 +19,7 @@ import img7 from './assets/img7.jpeg';
 import img8 from './assets/img8.jpg'; 
 import img9 from './assets/img9.jpg'; 
 import img10 from './assets/img10.png'; 
-
+import logo from './assets/logo-corita1.png'; 
 function App() {
   const [view, setView] = React.useState(window.location.hash.replace('#', '') || 'formulario');
 
@@ -48,7 +48,11 @@ function App() {
     <div>
       <Navbar expand="lg" className="glass sticky-top">
         <Container >
-          <Navbar.Brand href="#formulario" className="title">Corita</Navbar.Brand>
+        <Navbar.Brand href="#formulario" className="d-flex align-items-center">
+        <img src={logo} alt="Imagen superior" className="logo" />
+
+        <span className="title">Corita</span>
+      </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav ">
             <Nav className="me-auto">

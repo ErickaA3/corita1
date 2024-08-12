@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import Form from 'react-bootstrap/Form'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
@@ -21,11 +21,20 @@ function Formulario() {
   const handleCheckboxChange = (e) => {
     const { value, checked } = e.target;
     if (checked) {
-      setSelectedOptions([...selectedOptions, value]);
+      setSelectedOptions((prevOptions) => {
+        const updatedOptions = [...prevOptions, value];
+        console.log("Seleccionado:", updatedOptions);
+        return updatedOptions;
+      });
     } else {
-      setSelectedOptions(selectedOptions.filter((option) => option !== value));
+      setSelectedOptions((prevOptions) => {
+        const updatedOptions = prevOptions.filter((option) => option !== value);
+        console.log("Deseleccionado:", updatedOptions);
+        return updatedOptions;
+      });
     }
   };
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,11 +45,7 @@ function Formulario() {
     formData.append('name', name);
     formData.append('phone', phone);
     formData.append('description', description);
-
-    // Agregar cada opción individualmente al FormData
-    selectedOptions.forEach((option, index) => {
-      formData.append(`options[${index}]`, option);
-    });
+    formData.append('options', JSON.stringify(selectedOptions)); // Convertir las opciones a JSON
 
     try {
       const response = await axios.post('https://corita1-production.up.railway.app/upload', formData, {
@@ -58,37 +63,38 @@ function Formulario() {
 
   return (
     <div className="contenedor1">
+      <h1>Sube tus fotos</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Correo Electrónico</Form.Label>
-          <Form.Control
-            type="email"
-            placeholder="Ingresa tu correo electrónico."
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
+          <Form.Control 
+            type="email" 
+            placeholder="Ingresa tu correo electrónico." 
+            value={email} 
+            onChange={(e) => setEmail(e.target.value)} 
+            required 
           />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicName">
           <Form.Label>Nombre</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Ingresa tu nombre."
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
+          <Form.Control 
+            type="text" 
+            placeholder="Ingresa tu nombre." 
+            value={name} 
+            onChange={(e) => setName(e.target.value)} 
+            required 
           />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPhone">
           <Form.Label>Número de Teléfono</Form.Label>
-          <Form.Control
-            type="tel"
-            placeholder="Ingresa tu número de teléfono."
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            required
+          <Form.Control 
+            type="tel" 
+            placeholder="Ingresa tu número de teléfono." 
+            value={phone} 
+            onChange={(e) => setPhone(e.target.value)} 
+            required 
           />
         </Form.Group>
 
@@ -163,27 +169,28 @@ function Formulario() {
             />
           </div>
         </Form.Group>
-        
+
         <Form.Group className="mb-3" controlId="formBasicDescription">
           <Form.Label>Descripción</Form.Label>
-          <Form.Control
-            as="textarea"
-            rows={4}
-            placeholder="Ingresa una descripción detallada de la edición que deseas."
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            required
+          <Form.Control 
+            as="textarea" 
+            rows={4} 
+            placeholder="Ingresa una descripción detallada de la edición que deseas." 
+            value={description} 
+            onChange={(e) => setDescription(e.target.value)} 
+            required 
           />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicFile">
           <Form.Label>Subir Imagen</Form.Label>
-          <Form.Control
-            type="file"
-            onChange={handleFileChange}
-            required
+          <Form.Control 
+            type="file" 
+            onChange={handleFileChange} 
+            required 
           />
         </Form.Group>
+
         <Button variant="primary" type="submit">
           Subir
         </Button>
@@ -195,3 +202,4 @@ function Formulario() {
 }
 
 export default Formulario;
+

@@ -28,7 +28,10 @@
   z-index: -1; /* Coloca la imagen detrás del contenido */
   border-radius: 5px; /* Asegura que el borde redondeado coincida con el del contenedor */
 }
-
+.logo {
+  height: 60px; /* Ajusta el tamaño del logo según tus necesidades */
+  margin-right: 60px; /* Espacio entre el logo y el texto */
+}
     
 body {
   background-image: url('background.png');

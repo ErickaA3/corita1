@@ -2,17 +2,12 @@ const express = require('express');
 const multer = require('multer');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const cors = require('cors'); 
+const cors = require('cors');
 
 dotenv.config();
 
 const app = express();
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*'); // Permitir todos los orígenes
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE'); // Permitir estos métodos
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // Permitir estos encabezados
-  next();
-});
+
 app.use(cors({
   origin: '*',  
   methods: ['GET', 'POST'],
@@ -20,7 +15,6 @@ app.use(cors({
 }));
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true })); // Para manejar datos de formularios
 
 // Conectar a MongoDB
 const mongoURI = `mongodb://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_HOST}:${process.env.MONGO_PORT}`;
@@ -47,8 +41,8 @@ const upload = multer({ storage: storage });
 
 // Ruta para manejar la carga de archivos
 app.post('/upload', upload.single('file'), async (req, res) => {
-  const { email, name, phone, description } = req.body;
-  const options = Object.values(req.body).filter((key) => key.startsWith('options[')).map((option) => option);
+  const { email, name, phone, description, options } = req.body;
+  const parsedOptions = JSON.parse(options); // Convertir el string a un array
 
   if (!req.file) {
     return res.status(400).send('No se ha subido ninguna imagen');
@@ -62,13 +56,14 @@ app.post('/upload', upload.single('file'), async (req, res) => {
     phone,
     image: imageBase64,
     description,
-    options, // Guardar las opciones de edición seleccionadas
+    options: parsedOptions, // Guardar el array de opciones
   });
 
   try {
     await newUser.save();
     res.send('Usuario y archivo subidos exitosamente');
   } catch (error) {
+    console.error('Error al guardar en MongoDB:', error);
     res.status(500).send('Error al guardar en MongoDB');
   }
 });
