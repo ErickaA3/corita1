@@ -205,7 +205,7 @@ function App() {
       <Accordion.Item eventKey="2">
         <Accordion.Header>¿Cómo puedo enviar mis fotos para su edición?</Accordion.Header>
         <Accordion.Body>
-        Puedes cargar tus fotos directamente en nuestra formulario. Asegúrate de llenar el formulario con tus datos correctos. Si presentas alguna dificultadad contanctanos por nuestro correo.
+        Puedes cargar tus fotos directamente en nuestra formulario. Asegúrate de llenar el formulario con tus datos correctos. Si presentas alguna dificultadad contáctanos por nuestro correo.
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="3">
@@ -261,7 +261,7 @@ function App() {
             </p>
            
             <p>
-              Mi misión es convertir tus fotos en recuerdos inolvidables. A través de la edición fotográfica, quiero realzar cada detalle y cada emoción capturada en una imagen.No se trata solo de ajustar brillos y contrastes; es sobre dar vida a tus visiones, transformando momentos en obras maestras.
+              Mi misión es convertir tus fotos en recuerdos inolvidables. A través de la edición fotográfica, quiero realzar cada detalle y cada emoción capturada en una imagen. No se trata solo de ajustar brillos y contrastes; es sobre dar vida a tus visiones, transformando momentos en obras maestras.
             </p>
             <h2 className="text-center">¿Qué ofrezco?</h2>
             <p>➤ Calidad excepcional.</p>

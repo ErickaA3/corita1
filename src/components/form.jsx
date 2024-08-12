@@ -24,13 +24,11 @@ function Formulario() {
     if (checked) {
       setSelectedOptions((prevOptions) => {
         const updatedOptions = [...prevOptions, value];
-        console.log("Seleccionado:", updatedOptions);
         return updatedOptions;
       });
     } else {
       setSelectedOptions((prevOptions) => {
         const updatedOptions = prevOptions.filter((option) => option !== value);
-        console.log("Deseleccionado:", updatedOptions);
         return updatedOptions;
       });
     }
