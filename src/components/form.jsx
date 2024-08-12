@@ -3,6 +3,7 @@ import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Alert from 'react-bootstrap/Alert';
 import './styles.css';
 
 function Formulario() {
@@ -63,7 +64,7 @@ function Formulario() {
 
   return (
     <div className="contenedor1">
-      <h1>Sube tus fotos</h1>
+      <h1>Editamos tus fotos</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Correo Electrónico</Form.Label>
@@ -195,8 +196,12 @@ function Formulario() {
           Subir
         </Button>
       </Form>
-
-      {message && <p>{message}</p>}
+   <br />
+        {message && (
+          <Alert variant={message === 'Error al subir el archivo' ? 'danger' : 'success'}>
+            <p>{message}</p>
+          </Alert>
+        )}
     </div>
   );
 }

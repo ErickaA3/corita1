@@ -3,7 +3,7 @@
 .contenedor1 {
   max-width: 1000px;
   border-radius: 5px;
-  padding: 20px;
+  padding: 25px;
   margin: 40px;
   color: #ffffff;
   box-shadow: 0px 10px 100px 25px rgba(4, 255, 0, 0.411);
@@ -36,11 +36,11 @@
 body {
   background-image: url('background.png');
   background-size: 100%; 
-  
+  color: #ffffff;
   font-family: "Quicksand", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
-  
+  color: white;
   background-color: black; 
   margin: 0; 
   padding: 0; 
@@ -48,31 +48,33 @@ body {
     
   .glass{
    
-    
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0));
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
+    color: #ffffff;
+      background: linear-gradient(135deg, rgba(40, 54, 255, 0.257), rgba(255, 255, 255, 0));
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       
   
   }
   .title{
     color: rgb(255, 255, 255);
     font-weight: 700;
-    
+    font-size: 30px;
     
   }
   .subs{
     color: rgb(255, 255, 255);
     align-items: center;
-    
+    font-weight: 700;
     
     
   }
   .subs:hover {
     color: #495af2; 
-  
+    
+
     border-radius: 5px;
   }
+  
   .banner{
     text-align: center;
     color: rgb(240, 240, 240);
@@ -128,11 +130,7 @@ body {
     height: 500px; /* Ajusta según tus necesidades */
   }
   
-  .image {
-    position: absolute;
-    width: 150px; /* Ajusta según tus necesidades */
-    height: auto;
-  }
+
   
   .image-top {
     top: 0;
@@ -147,9 +145,9 @@ body {
   
   .image{
     position: relative;
-	width: 300px;
+	width: 200px;
   
-	height: 300px;
+	height: 200px;
 	margin: 40px auto;
   border-radius: 8px;
   transform: scale(0.9)  translateY(30px);
@@ -162,6 +160,7 @@ body {
     background-color: rgb(7, 7, 7);
 
   }
+  
 
 .minicontendor2 {
   position: relative;
@@ -475,4 +474,185 @@ li:nth-child(9), li:nth-child(9) .card {
 
   background-color: #000000;
   color: rgb(255, 255, 255);
+}
+.conteiner-form{
+  display: flex;
+ 
+  align-items: center; 
+  justify-content: center; 
+  text-align: justify; 
+  margin-bottom: 50px;
+}
+.h1-form{
+  color: #ffffff;
+  text-align: center;
+  font-size: 50px;
+  margin-top:150px;
+  margin-bottom: 100px;
+  font-weight: 700;
+}
+.cv{
+  width: 500px;
+  height: 700px;
+}
+.h1-cv{
+  color: #ffffff;
+  text-align: center;
+  font-size: 50px;
+  margin-top:150px;
+  margin-bottom: 100px;
+  font-weight: 700;
+
+}
+.card-cv{
+  background-color: #0015ff11;
+}
+/* Footer.css */
+
+.footer {
+  margin-top:60px;
+  
+  padding: 20px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 20px;
+}
+
+.social-icons {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.social-icons a {
+  color: #333;
+  margin: 0 10px;
+  font-weight: 700;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+
+
+/* Estilos para el copyright */
+.copyright {
+  font-size: px;
+  color: #ffffff;
+}
+.span-w {
+  background: -webkit-linear-gradient(#4fff58,rgb(21, 255, 0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+ 
+}
+.span-w:hover {
+  background: -webkit-linear-gradient(#94de98,rgb(155, 255, 146));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+ 
+}
+.span-f {
+  background: -webkit-linear-gradient(#4f5eff,rgb(13, 0, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+ 
+}
+.span-f:hover {
+  background: -webkit-linear-gradient(#98a0f9,rgb(136, 130, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+ 
+}
+.span-i{
+  background: -webkit-linear-gradient(#ff00b7,rgb(255, 136, 0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+ 
+}
+.span-i:hover{
+  background: -webkit-linear-gradient(#ff9ce3,rgb(255, 196, 128));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+ 
+}
+
+.span-e{
+  background: -webkit-linear-gradient(#ff3a3a,rgb(255, 0, 0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+ 
+}
+.span-e:hover{
+  background: -webkit-linear-gradient(#ff9c9c,rgb(255, 128, 128));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+ 
+}
+@media only screen and (max-width: 600px) {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    aspect-ratio: auto;
+}
+
+li {
+    position: relative;
+    width: 100%;
+    max-width: 90%;
+    margin: 10px auto; /* Añadimos margen para separar las cartas */
+    transform: none; /* Eliminamos la transformación */
+    animation: none; /* Desactivamos la animación */
+    top: 0;
+}
+
+.card {
+    width: 100%;
+    max-width: 100%; /* Aseguramos que la carta ocupe todo el ancho */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 24px;
+    gap: 8px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1), 0px 16px 32px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+}
+
+/* Eliminamos los círculos y efectos adicionales */
+.second-circle, .last-circle, .crop, .mask {
+    display: none;
+}
+  .cv{
+    width: 200px;
+    height: 300px;
+    
+  }
+  .h1-cv{
+    color: #ffffff;
+    text-align: center;
+    font-size: 50px;
+    margin-top:150px;
+    margin-bottom: 100px;
+    font-weight: 700;
+  
+  }
+  body{
+    font-size: 16px;
+    padding: auto;
+    
+  }
+  .card-cv{
+    font-size: 10px;
+    background-color: #0015ff11;
+    margin-bottom: 20px;
+  }
+  
 }

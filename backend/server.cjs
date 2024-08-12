@@ -61,7 +61,7 @@ app.post('/upload', upload.single('file'), async (req, res) => {
 
   try {
     await newUser.save();
-    res.send('Usuario y archivo subidos exitosamente');
+    res.send('Registrado exitosamente');
   } catch (error) {
     console.error('Error al guardar en MongoDB:', error);
     res.status(500).send('Error al guardar en MongoDB');

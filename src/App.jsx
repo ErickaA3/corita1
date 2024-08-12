@@ -20,54 +20,43 @@ import img8 from './assets/img8.jpg';
 import img9 from './assets/img9.jpg'; 
 import img10 from './assets/img10.png'; 
 import logo from './assets/logo-corita1.png'; 
+import cv from './assets/cv-ericka.jpg'; 
+
 function App() {
-  const [view, setView] = React.useState(window.location.hash.replace('#', '') || 'formulario');
-
-  React.useEffect(() => {
-    const handleHashChange = () => {
-      setView(window.location.hash.replace('#', '') || 'formulario');
-    };
-
-    window.addEventListener('hashchange', handleHashChange);
-    return () => {
-      window.removeEventListener('hashchange', handleHashChange);
-    };
-  }, []);
-
-  const renderContent = () => {
-    if (view === 'formulario') {
-      return <Formulario />;
-    }
-    if (view === 'fotos') {
-      return <Fotos />;
-    }
-    return <Formulario />; // Página por defecto
-  };
+  
 
   return (
     <div>
       <Navbar expand="lg" className="glass sticky-top">
         <Container >
-        <Navbar.Brand href="#formulario" className="d-flex align-items-center">
+        <Navbar.Brand href="#banner" className="d-flex align-items-center">
         <img src={logo} alt="Imagen superior" className="logo" />
 
         <span className="title">Corita</span>
       </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav ">
-            <Nav className="me-auto">
-              <Nav.Link href="#formulario"className="subs">Formulario</Nav.Link>
-              <Nav.Link href="#fotos"className="subs">Fotos</Nav.Link>
-              
+            <Nav className="text-white me-auto">
+            <Nav.Link href="#formulario"className="subs"></Nav.Link>
+
+              <Nav.Link href="#v-m"className="text-white"><strong>Visión & Misión</strong></Nav.Link>
+              <Nav.Link href="#servicios"className="text-white"><strong>Servicios</strong></Nav.Link>
+              <Nav.Link href="#portafolio"className="text-white"><strong>Portafolio</strong></Nav.Link>
+              <Nav.Link href="#faq"className="text-white" ><strong>Preguntas Frecuentes</strong></Nav.Link>
+              <Nav.Link href="#formulario"className="text-white"><strong>Formulario</strong></Nav.Link>
+              <Nav.Link href="#cv"className="text-white"><strong>Currículum</strong></Nav.Link>
+              <Nav.Link href="#contactanos"className="text-white"><strong>Contáctanos</strong></Nav.Link>
+
+
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <div className='contenedor-banner'>
+      <div id="banner" className='contenedor-banner'>
       <h1 className='banner'>Editamos <span className='spann'>pixel</span> a <span className='spann'>pixel</span></h1>
       <p className='bannerp'>En nuestra página, puedes subir tus fotos y nosotros nos encargamos de editarlas según tus preferencias. </p>
       <p className='bannerp'>Personalizamos cada imagen para que se ajuste a tu estilo y necesidades.</p>
-      <Button className='boton'>
+      <Button id="v-m" href="#formulario" className='boton'>
       Haz clic aquí para comenzar
         </Button>
       </div>
@@ -92,16 +81,27 @@ function App() {
   </Row>
 </Container>
 
-<div className="text-section">
-    <p>Transforma tus Imágenes</p>
-    <div className="relative-container">
-      <img src={img1} alt="Imagen superior" className="image image-top" />
-      <img src={img2} alt="Imagen inferior derecha" className="image image-bottom" />
-      <img src={img3} alt="Imagen superior" className="image image-top" />
-      <img src={img4} alt="Imagen inferior derecha" className="image image-bottom" />
-
+<div id="servicios" className="text-section">
+      <p>Algunos de nuestros servicios</p>
+      <Container>
+        <Row>
+          <Col>
+            <img src={img1} alt="Imagen superior izquierda" className="image" />
+          </Col>
+          <Col>
+            <img src={img2} alt="Imagen superior derecha" className="image" />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <img src={img3} alt="Imagen inferior izquierda" className="image" />
+          </Col>
+          <Col>
+            <img src={img4} alt="Imagen inferior derecha" className="image" />
+          </Col>
+        </Row>
+      </Container>
     </div>
-  </div>
 <div className="void" id="void">
       <div className="crop">
         <ul id="card-list" style={{ '--count': 6 }}>
@@ -162,9 +162,9 @@ function App() {
       
       
     </div>
-    <h1 className='h1-portafolio'>Portafolio</h1>
-    <div className='contenedor3'>
-      
+    
+    <div  className='contenedor3'>
+    <h1 id="portafolio" className='h1-portafolio'>Portafolio</h1>
         <div className="gallery">
       <div className="gallery-item">
         <img src={img5} alt="Imagen 1" className="image1 image-bottom1" />
@@ -184,9 +184,9 @@ function App() {
       <div className="gallery-item">
         <img src={img10} alt="Imagen 6" className="image1 image-bottom1" />
       </div>
-  </div>
-
-  <h1 className='h1-faq'>Preguntas Frecuentes</h1>
+  </div >
+ <h1 id="faq"className='h1-faq'>Preguntas Frecuentes</h1>
+ 
    </div>
     <div className='contenedor4'>
     <Accordion className='acordion' defaultActiveKey="0" flush>
@@ -205,7 +205,7 @@ function App() {
       <Accordion.Item eventKey="2">
         <Accordion.Header>¿Cómo puedo enviar mis fotos para su edición?</Accordion.Header>
         <Accordion.Body>
-        Puedes cargar tus fotos directamente en nuestra formulario. Asegúrate de seguir las instrucciones proporcionadas para garantizar una carga exitosa.
+        Puedes cargar tus fotos directamente en nuestra formulario. Asegúrate de llenar el formulario con tus datos correctos. Si presentas alguna dificultadad contanctanos por nuestro correo.
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="3">
@@ -229,11 +229,76 @@ function App() {
       </Accordion.Item>
     </Accordion>
     </div>
-
-      <Container>
-        {renderContent()}
-      </Container>
+    <h1 id="formulario" className='h1-form'>Llena este formulario para empezar ya!</h1>
+    <div className='conteiner-form'>
+    <>
+  {Formulario()}
+    </>
     </div>
+    <Container>
+    
+    
+      
+      <h1 id='cv' className="h1-cv">
+      Mi currículum
+      </h1>
+    
+
+      <Row className="mb-4">
+        {/* Columna con la imagen */}
+        <Col md={6} className="d-flex justify-content-center align-items-stretch">
+          <div className=" card-cv p-3 border rounded text-center w-75">
+            <img src={cv} alt="Cv-ericka" className="cv img-fluid" />
+          </div>
+        </Col>
+
+        {/* Columna con el texto */}
+        <Col md={6} className="d-flex justify-content-center align-items-stretch">
+          <div className="  card-cv p-3 border rounded text-center w-75">
+            <div className="inner">
+            <p>
+              Permíteme compartir contigo mi pasión y mi nueva aventura. Soy Ericka, una desarrolladora web apasionada y, en mis tiempos libres, una fotógrafa entusiasta. Pero aquí está la chispa que ha encendido mi corazón: he decidido fusionar estas dos pasiones en un emprendimiento único.
+            </p>
+           
+            <p>
+              Mi misión es convertir tus fotos en recuerdos inolvidables. A través de la edición fotográfica, quiero realzar cada detalle y cada emoción capturada en una imagen.No se trata solo de ajustar brillos y contrastes; es sobre dar vida a tus visiones, transformando momentos en obras maestras.
+            </p>
+            <h2 className="text-center">¿Qué ofrezco?</h2>
+            <p>➤ Calidad excepcional.</p>
+            <p>➤ Comunicación cercana.</p>
+            <p>➤ Experiencia fluida.</p>
+            <p>➤ Creatividad personalizada.</p>
+            
+            </div>
+            
+          </div>
+        </Col>
+      </Row>
+    </Container>
+    <footer id="contactanos" className="footer">
+      <div className="social-icons">
+        <a href="https://www.facebook.com/share/bTuKDouWQmEfmBod/?mibextid=qi2Omg" target="_blank" rel="noopener noreferrer">
+          <i className="fab fa-facebook"></i>
+          <span className='span-f'>Facebook</span>
+        </a>
+        <a href="mailto:corita.2024.1@gmail.com" target="_blank" rel="noopener noreferrer">
+          <span className='span-e'>Email</span>
+        </a>
+        <a href="https://wa.me/86197688" target="_blank" rel="noopener noreferrer">
+        <span className='span-w'>WhatsApp</span>
+        </a>
+        <a href="https://www.instagram.com/corita.uno/" target="_blank" rel="noopener noreferrer">
+          <span className='span-i'>Instagram</span>
+        </a>
+        
+      </div>
+      <p className="copyright">&copy; Corita 2024</p>
+    </footer>
+
+
+    </div>
+    
+
   );
 }
 
