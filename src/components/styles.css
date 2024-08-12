@@ -21,7 +21,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('src/assets/img11.jpg');
+  background-image: url('form.jpg');
   background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
   background-position: center; /* Centra la imagen */
   filter: blur(5px); /* Aplica el desenfoque a la imagen */
