@@ -34,7 +34,7 @@ function App() {
         <div>
             <Navbar expand="lg" className="glass sticky-top">
                 <Container>
-                    <Navbar.Brand href="/" className="d-flex align-items-center">
+                    <Navbar.Brand href="#banner" className="d-flex align-items-center">
                         <img src={logo} alt="Imagen superior" className="logo" />
                         <span className="title">Corita</span>
                     </Navbar.Brand>
