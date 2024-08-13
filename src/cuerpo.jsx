@@ -181,7 +181,7 @@ function Cuerpo() {
       <Accordion.Item eventKey="2">
         <Accordion.Header>¿Cómo puedo enviar mis fotos para su edición?</Accordion.Header>
         <Accordion.Body>
-        Puedes cargar tus fotos directamente en nuestra formulario. Asegúrate de llenar el formulario con tus datos correctos. Si presentas alguna dificultadad contáctanos por nuestro correo.
+        Puedes cargar tus fotos directamente en nuestro formulario. Asegúrate de llenar el formulario con tus datos correctos. Si presentas alguna dificultad contáctanos por nuestro correo.
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="3">
@@ -231,7 +231,7 @@ function Cuerpo() {
           <div className="  card-cv p-3 border rounded text-center w-75">
             <div className="inner">
             <p>
-              Permíteme compartir contigo mi pasión y mi nueva aventura. Soy Ericka, una desarrolladora web apasionada y, en mis tiempos libres, una fotógrafa entusiasta. Pero aquí está la chispa que ha encendido mi corazón: he decidido fusionar estas dos pasiones en un emprendimiento único.
+              Permíteme compartir contigo mi pasión y mi nueva aventura. Soy Ericka, una desarrolladora web apasionada y en mis tiempos libres, una fotógrafa entusiasta. Pero aquí está la chispa que ha encendido mi corazón: he decidido fusionar estas dos pasiones en un emprendimiento único.
             </p>
            
             <p>
