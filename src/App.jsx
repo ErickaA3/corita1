@@ -41,7 +41,9 @@ function App() {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="text-white me-auto">
-                            <Nav.Link href="#formulario" className="subs"></Nav.Link>
+                            <Nav.Link href="#banner" className="text-white">
+                              <strong>Inicio</strong>
+                            </Nav.Link>
                             <Nav.Link href="#v-m" className="text-white">
                                 <strong>Visión & Misión</strong>
                             </Nav.Link>

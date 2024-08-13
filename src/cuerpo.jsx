@@ -175,8 +175,7 @@ function Cuerpo() {
       <Accordion.Item eventKey="1">
         <Accordion.Header>¿Cuánto tiempo lleva el proceso de edición?</Accordion.Header>
         <Accordion.Body>
-        El tiempo de edición puede variar según la complejidad de la solicitud y la cantidad de fotos. Por lo general, proporcionamos estimaciones basadas en la carga de trabajo actual.
-        </Accordion.Body>
+        El tiempo de edición puede variar según la complejidad de la solicitud y la cantidad de fotos. Por lo general, proporcionamos estimaciones basadas en la carga de trabajo actual, con un tiempo máximo de entrega de una semana.        </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="2">
         <Accordion.Header>¿Cómo puedo enviar mis fotos para su edición?</Accordion.Header>
@@ -200,7 +199,7 @@ function Cuerpo() {
       <Accordion.Item eventKey="6">
         <Accordion.Header>¿Cuál es el método de pago?</Accordion.Header>
         <Accordion.Body>
-        El método de pago se definirá en función de la edición solicitada. La cotización es bastante rápida y te proporcionaremos toda la información necesaria tan pronto como se complete.
+        Los métodos de pago disponibles son mediante transacción bancaria, SINPE Móvil o PayPal. La cotización del servicio es bastante rápida, generalmente toma entre 1 y 5 horas.
         </Accordion.Body>
       </Accordion.Item>
     </Accordion>
