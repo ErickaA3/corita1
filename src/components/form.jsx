@@ -103,67 +103,67 @@ function Formulario() {
             <Form.Check
               type="checkbox"
               label="Ajuste de calidez."
-              value="Ajuste de calidez"
+              value="Ajuste de calidez, "
               onChange={handleCheckboxChange}
             />
             <Form.Check
               type="checkbox"
               label="Aumento de saturación."
-              value="Aumento de saturación"
+              value="Aumento de saturación, "
               onChange={handleCheckboxChange}
             />
             <Form.Check
               type="checkbox"
               label="Reducción de ruido."
-              value="Reducción de ruido"
+              value="Reducción de ruido, "
               onChange={handleCheckboxChange}
             />
             <Form.Check
               type="checkbox"
               label="Eliminación de imperfecciones."
-              value="Eliminación de imperfecciones"
+              value="Eliminación de imperfecciones, "
               onChange={handleCheckboxChange}
             />
             <Form.Check
               type="checkbox"
               label="Ajuste de contraste."
-              value="Ajuste de contraste"
+              value="Ajuste de contraste, "
               onChange={handleCheckboxChange}
             />
             <Form.Check
               type="checkbox"
               label="Mejora de nitidez."
-              value="Mejora de nitidez"
+              value="Mejora de nitidez, "
               onChange={handleCheckboxChange}
             />
             <Form.Check
               type="checkbox"
               label="Restauración de fotos."
-              value="Restauración de fotos"
+              value="Restauración de fotos, "
               onChange={handleCheckboxChange}
             />
             <Form.Check
               type="checkbox"
               label="Cambio de fondo."
-              value="Cambio de fondo"
+              value="Cambio de fondo, "
               onChange={handleCheckboxChange}
             />
             <Form.Check
               type="checkbox"
               label="Aplicación de filtro vintage."
-              value="Aplicación de filtro vintage"
+              value="Aplicación de filtro vintage, "
               onChange={handleCheckboxChange}
             />
             <Form.Check
               type="checkbox"
               label="Corrección de exposición."
-              value="Corrección de exposición"
+              value="Corrección de exposición, "
               onChange={handleCheckboxChange}
             />
             <Form.Check
               type="checkbox"
               label="Eliminar elementos no deseados."
-              value="Eliminar elementos no deseados"
+              value="Eliminar elementos no deseados, "
               onChange={handleCheckboxChange}
             />
           </div>
